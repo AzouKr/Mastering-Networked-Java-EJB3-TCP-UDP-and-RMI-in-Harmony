@@ -30,7 +30,7 @@ public class Client1 extends Thread {
 
 			
 			// Sending API to Inter
-			Registry reg = LocateRegistry.getRegistry("127.0.0.1", 8080);
+			Registry reg = LocateRegistry.getRegistry("127.0.0.1", 4000);
 			InterInterface inter = (InterInterface) reg.lookup("Refp");
 			System.out.println("3000 sent API to Inter");
 			inter.redirectAPI(Client1Ref.get(0));

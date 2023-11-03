@@ -11,5 +11,12 @@
 	<classpathentry kind="lib" path="/Users/mac/eclipse-workspace/Server3/bin"/>
 	<classpathentry kind="lib" path="/Users/mac/eclipse-workspace/Server4/bin"/>
 	<classpathentry kind="lib" path="/Users/mac/eclipse-workspace/Server5/bin"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/CentralServer"/>
+	<classpathentry kind="lib" path="/Users/mac/wildfly-27.0.0.Final/jboss-modules.jar"/>
+	<classpathentry kind="lib" path="/Users/mac/wildfly-27.0.0.Final/bin/client/jboss-client.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -30,7 +30,7 @@ public class Client6 extends Thread {
 			List<String> Client6Ref = new ArrayList<>(Arrays.asList("S5", "S4", "S1", "S3", "S10", "S7", "S6", "S0", "S13", "S2", "S1", "S7", "S6", "S3","S15","S2","S1", "S14", "S5", "S6", "FIN"));
 			
 			// Sending API to Inter
-			Registry reg = LocateRegistry.getRegistry("127.0.0.1", 8080);
+			Registry reg = LocateRegistry.getRegistry("127.0.0.1", 4000);
 			InterInterface inter = (InterInterface) reg.lookup("Refp");
 			
 			timer.start(120000, null);

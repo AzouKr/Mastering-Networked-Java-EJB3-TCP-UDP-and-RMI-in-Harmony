@@ -77,7 +77,7 @@ public class Inter extends java.rmi.server.UnicastRemoteObject implements InterI
 	public static void main(String[] args) {
 		try {
 			Inter inter = new Inter();
-			Registry reg = LocateRegistry.createRegistry(8080);
+			Registry reg = LocateRegistry.createRegistry(4000);
 			reg.rebind("Refp", inter);
 			
 			
