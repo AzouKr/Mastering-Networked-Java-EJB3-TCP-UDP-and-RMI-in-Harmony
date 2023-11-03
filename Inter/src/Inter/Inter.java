@@ -1,5 +1,7 @@
 package Inter;
 
+import java.io.ObjectOutputStream;
+import java.net.Socket;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.util.Arrays;
@@ -19,6 +21,7 @@ public class Inter extends java.rmi.server.UnicastRemoteObject implements InterI
 	public void redirectAPI(String reference) throws Exception {
 		
 		int ServerNum = 0;
+		int port = 0;
 		
 		if(Server1.contains(reference)) {
 			ServerNum = 1;
@@ -40,9 +43,35 @@ public class Inter extends java.rmi.server.UnicastRemoteObject implements InterI
 			}
 		}
 		
-		System.out.println("Goes to Server number :"+ServerNum);
+		switch (ServerNum) {
+        case 1:
+            port = 8081;
+            break;
+
+        case 2:
+        	port = 8082;
+            break;
+
+        case 3:
+        	port = 8083;
+            break;
+
+        case 4:
+        	port = 8084;
+            break;
+
+        case 5:
+        	port = 8085;
+            break;
+		}
 		
+		System.out.println("API directed to Server "+ServerNum);
 		
+		Socket c = new Socket("127.0.0.1", port);
+		ObjectOutputStream out = new ObjectOutputStream(c.getOutputStream());
+		out. writeObject("Server "+ServerNum+": Reference "+reference+" has been sent ");
+		out.close();
+		c.close();
 	}
 	
 	public static void main(String[] args) {
