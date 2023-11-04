@@ -6,6 +6,7 @@
 - Eclipse IDE for Enterprise Java and Web Developers (J2EE) – version: 2023.
 - WildFly 27.0 Runtime Server.
 - TCP/IP Network.
+- MySQL Database
 
 
 ## Objective 
@@ -47,3 +48,14 @@ information that moves around the ring and issues a new token.
 To show how it works, we consider the following client reference chains:
 
 ![](./Work.png)
+
+## How To Use
+
+In Order to work with this architecture you have to do the following :
+- Start the WildFly Server Frist to connect to MySQL DATABSE.
+- Run as Java Application the ServerApplication class (this will start all the 5 servers at one time using THREADS).
+- Run as Java Application the Inter class.
+- Run as Java Application the ClientApplication class (this will start all the 6 clients at one time using THREADS).
+
+
+
