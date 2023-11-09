@@ -10,6 +10,7 @@ import java.util.List;
 
 import Client2.RandomTokenGenerator;
 import Inter.InterInterface;
+import Models.Service;
 
 public class Client2 extends Thread {
 
@@ -20,6 +21,7 @@ public class Client2 extends Thread {
 		try {
 			
 			MyTimer timer = new MyTimer();
+			String[] serviceInfo = new String[3];
 			boolean run = true;
 			DatagramSocket client2 = new DatagramSocket(3001);
 			RandomTokenGenerator RTG = new RandomTokenGenerator();
@@ -50,7 +52,9 @@ public class Client2 extends Thread {
 					}else {
 						Thread.sleep(2000);
 						System.out.println("3001 sent API to Inter");
-						inter.redirectAPI(Client2Ref.get(0));
+						Service service = inter.redirectAPI(Client2Ref.get(0));
+						System.out.println("Information received regarding the service: "+Client2Ref.get(0));
+						System.out.println("Number: " + service.getNumber() + ", Name: " + service.getName() + ", Description: "+ service.getDescription());
 						Client2Ref.remove(0);
 						
 						sendToken = Token.getBytes();

@@ -1,9 +1,12 @@
 package CentralServer;
 
+import Models.Server;
+import Models.Service;
 import jakarta.ejb.Remote;
 
 @Remote
 public interface CentralServerInterface {
 	
-	void HandelServersAPIs(String req);
+	public Service HandelServersAPIs(String req);
+	public void saveServers(Server server);
 }

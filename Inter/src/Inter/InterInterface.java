@@ -2,7 +2,9 @@ package Inter;
 
 import java.rmi.Remote;
 
+import Models.Service;
+
 public interface InterInterface extends Remote {
 
-	void redirectAPI(String reference) throws Exception;
+	Service redirectAPI(String reference) throws Exception;
 }

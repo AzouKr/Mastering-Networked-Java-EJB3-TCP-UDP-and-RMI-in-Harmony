@@ -6,7 +6,7 @@ import Server3.Server3;
 import Server4.Server4;
 import Server5.Server5;
 
-public class main {
+public class mainServer {
 
 	public static void main(String[] args) {
 		

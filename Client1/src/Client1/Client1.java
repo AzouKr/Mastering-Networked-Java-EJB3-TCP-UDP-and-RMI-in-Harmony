@@ -9,6 +9,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import Inter.InterInterface;
+import Models.Service;
 
 public class Client1 extends Thread {
 
@@ -20,6 +21,7 @@ public class Client1 extends Thread {
 			
 			MyTimer timer = new MyTimer();
 			boolean run = true;
+			String[] serviceInfo = new String[3];
 			DatagramSocket client1 = new DatagramSocket(3000);
 			RandomTokenGenerator RTG = new RandomTokenGenerator();
 			int tokenLength = 8; // Change this to the desired length of your token
@@ -33,8 +35,12 @@ public class Client1 extends Thread {
 			Registry reg = LocateRegistry.getRegistry("127.0.0.1", 4000);
 			InterInterface inter = (InterInterface) reg.lookup("Refp");
 			System.out.println("3000 sent API to Inter");
-			inter.redirectAPI(Client1Ref.get(0));
+			Service service = inter.redirectAPI(Client1Ref.get(0));
+			System.out.println("Information received regarding the service: "+Client1Ref.get(0));
+			System.out.println("Number: " + service.getNumber() + ", Name: " + service.getName() + ", Description: "+ service.getDescription());
 			Client1Ref.remove(0);
+			
+			
 			
 			// Start Sending Token
 			sendToken = Token.getBytes();
@@ -58,7 +64,9 @@ public class Client1 extends Thread {
 					}else {
 						Thread.sleep(2000);
 						System.out.println("3000 sent API to Inter");
-						inter.redirectAPI(Client1Ref.get(0));
+						service = inter.redirectAPI(Client1Ref.get(0));
+						System.out.println("Information received regarding the service: "+Client1Ref.get(0));
+						System.out.println("Number: " + service.getNumber() + ", Name: " + service.getName() + ", Description: "+ service.getDescription());
 						Client1Ref.remove(0);
 						
 						sendToken = Token.getBytes();

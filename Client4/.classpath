@@ -7,5 +7,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="/Users/mac/eclipse-workspace/Inter/bin"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/CentralServer"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

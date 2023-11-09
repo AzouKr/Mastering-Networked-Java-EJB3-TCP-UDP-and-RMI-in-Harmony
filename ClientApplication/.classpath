@@ -13,5 +13,6 @@
 	<classpathentry kind="lib" path="/Users/mac/eclipse-workspace/Client5/bin"/>
 	<classpathentry kind="lib" path="/Users/mac/eclipse-workspace/Client6/bin"/>
 	<classpathentry kind="lib" path="/Users/mac/eclipse-workspace/Inter/bin"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/CentralServer"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

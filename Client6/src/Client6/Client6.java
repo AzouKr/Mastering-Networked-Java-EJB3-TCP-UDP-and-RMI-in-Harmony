@@ -10,6 +10,7 @@ import java.util.List;
 
 import Client6.RandomTokenGenerator;
 import Inter.InterInterface;
+import Models.Service;
 
 public class Client6 extends Thread {
 
@@ -21,6 +22,7 @@ public class Client6 extends Thread {
 			
 			MyTimer timer = new MyTimer();
 			boolean run = true;
+			String[] serviceInfo = new String[3];
 			DatagramSocket client6 = new DatagramSocket(3005);
 			RandomTokenGenerator RTG = new RandomTokenGenerator();
 			int tokenLength = 8; // Change this to the desired length of your token
@@ -50,7 +52,9 @@ public class Client6 extends Thread {
 					}else {
 						Thread.sleep(2000);
 						System.out.println("3005 sent API to Inter");
-						inter.redirectAPI(Client6Ref.get(0));
+						Service service = inter.redirectAPI(Client6Ref.get(0));
+						System.out.println("Information received regarding the service: "+Client6Ref.get(0));
+						System.out.println("Number: " + service.getNumber() + ", Name: " + service.getName() + ", Description: "+ service.getDescription());
 						Client6Ref.remove(0);
 						
 						sendToken = Token.getBytes();
